@@ -1,0 +1,2 @@
+basic:disp-cv
+-DCATKIN_DEVEL_PREFIX=/home/harsh/ros_ws/devel -DCMAKE_INSTALL_PREFIX=/home/harsh/ros_ws/install -G Unix Makefiles

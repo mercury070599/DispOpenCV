@@ -1,0 +1,8 @@
+prefix=/home/harsh/ros_ws/install
+
+Name: basic
+Description: Description of basic
+Version: 0.0.0
+Cflags: -I/home/harsh/ros_ws/install/include
+Libs: -L/home/harsh/ros_ws/install/lib 
+Requires: roscpp std_msgs

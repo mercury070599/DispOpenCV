@@ -1,0 +1,8 @@
+prefix=/home/harsh/ros_ws/install
+
+Name: Basic
+Description: Description of Basic
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/harsh/ros_ws/install/lib 
+Requires: 
