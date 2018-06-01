@@ -53,10 +53,11 @@
 /home/harsh/ros_ws/build/basic/CMakeFiles/install/strip.dir
 /home/harsh/ros_ws/build/basic/CMakeFiles/install/local.dir
 /home/harsh/ros_ws/build/disp-cv/CMakeFiles/install.dir
-/home/harsh/ros_ws/build/disp-cv/CMakeFiles/test.dir
 /home/harsh/ros_ws/build/disp-cv/CMakeFiles/install/local.dir
 /home/harsh/ros_ws/build/disp-cv/CMakeFiles/list_install_components.dir
 /home/harsh/ros_ws/build/disp-cv/CMakeFiles/install/strip.dir
+/home/harsh/ros_ws/build/disp-cv/CMakeFiles/test.dir
+/home/harsh/ros_ws/build/disp-cv/CMakeFiles/image.dir
 /home/harsh/ros_ws/build/disp-cv/CMakeFiles/edit_cache.dir
 /home/harsh/ros_ws/build/disp-cv/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir
 /home/harsh/ros_ws/build/disp-cv/CMakeFiles/sensor_msgs_generate_messages_eus.dir

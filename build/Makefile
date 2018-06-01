@@ -504,6 +504,19 @@ receiver/fast:
 .PHONY : receiver/fast
 
 #=============================================================================
+# Target rules for targets named image
+
+# Build rule for target.
+image: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 image
+.PHONY : image
+
+# fast build rule for target.
+image/fast:
+	$(MAKE) -f disp-cv/CMakeFiles/image.dir/build.make disp-cv/CMakeFiles/image.dir/build
+.PHONY : image/fast
+
+#=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -672,6 +685,7 @@ help:
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... sender"
 	@echo "... receiver"
+	@echo "... image"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_py"

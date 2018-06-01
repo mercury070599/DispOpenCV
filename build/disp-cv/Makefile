@@ -68,17 +68,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -110,6 +99,17 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -164,6 +164,21 @@ preinstall/fast:
 depend:
 	cd /home/harsh/ros_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+disp-cv/CMakeFiles/image.dir/rule:
+	cd /home/harsh/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 disp-cv/CMakeFiles/image.dir/rule
+.PHONY : disp-cv/CMakeFiles/image.dir/rule
+
+# Convenience name for target.
+image: disp-cv/CMakeFiles/image.dir/rule
+
+.PHONY : image
+
+# fast build rule for target.
+image/fast:
+	cd /home/harsh/ros_ws/build && $(MAKE) -f disp-cv/CMakeFiles/image.dir/build.make disp-cv/CMakeFiles/image.dir/build
+.PHONY : image/fast
 
 # Convenience name for target.
 disp-cv/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
@@ -315,6 +330,33 @@ geometry_msgs_generate_messages_nodejs/fast:
 	cd /home/harsh/ros_ws/build && $(MAKE) -f disp-cv/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make disp-cv/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
 .PHONY : geometry_msgs_generate_messages_nodejs/fast
 
+src/image.o: src/image.cpp.o
+
+.PHONY : src/image.o
+
+# target to build an object file
+src/image.cpp.o:
+	cd /home/harsh/ros_ws/build && $(MAKE) -f disp-cv/CMakeFiles/image.dir/build.make disp-cv/CMakeFiles/image.dir/src/image.cpp.o
+.PHONY : src/image.cpp.o
+
+src/image.i: src/image.cpp.i
+
+.PHONY : src/image.i
+
+# target to preprocess a source file
+src/image.cpp.i:
+	cd /home/harsh/ros_ws/build && $(MAKE) -f disp-cv/CMakeFiles/image.dir/build.make disp-cv/CMakeFiles/image.dir/src/image.cpp.i
+.PHONY : src/image.cpp.i
+
+src/image.s: src/image.cpp.s
+
+.PHONY : src/image.s
+
+# target to generate assembly for a file
+src/image.cpp.s:
+	cd /home/harsh/ros_ws/build && $(MAKE) -f disp-cv/CMakeFiles/image.dir/build.make disp-cv/CMakeFiles/image.dir/src/image.cpp.s
+.PHONY : src/image.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -322,10 +364,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install"
-	@echo "... test"
 	@echo "... install/local"
 	@echo "... list_install_components"
 	@echo "... install/strip"
+	@echo "... test"
+	@echo "... image"
 	@echo "... edit_cache"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_eus"
@@ -338,6 +381,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... src/image.o"
+	@echo "... src/image.i"
+	@echo "... src/image.s"
 .PHONY : help
 
 
